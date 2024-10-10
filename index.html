@@ -2,26 +2,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desafio 2 - HTML</title>
+    <style>
+        /* Reset básico */
+        body { 
+          background-color: lightgray;
+            border: none; 
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Estrutura Flex para o layout geral */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2em 0 0 0;
+        }
+
+        main {
+            background-color: lightgray;
+            flex: 1; /* O main irá ocupar todo o espaço disponível */
+            padding: 0em 1em;
+        }
+
+        aside {
+            background-color: rgb(27, 7, 67);
+            padding: 1em;
+            width: 20%; /* Aside ocupa 20% da largura */
+            color: whitesmoke;
+        }
+
+        /* Menu principal */
+        .menu1 {
+            display: grid; 
+            min-height: 3em; 
+            text-align: center; 
+            background-color: black;
+        }
+
+        .menu1-li {
+            list-style-type: none; 
+            display: inline-block; 
+            padding-right: 10%;
+        }
+
+        /* Menu lateral */
+        .menu2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu2-li {
+            list-style-type: none;
+            padding-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        button {
+            min-width: 5rem;
+            height: 1.6rem;
+            color: whitesmoke;
+            background-color: blueviolet;
+        }
+
+        button:hover {
+            color: blueviolet;
+            background-color: whitesmoke;
+            transition: 1.5s;
+        }
+
+        button:active {
+            color: greenyellow;
+            background-color: rgb(145, 38, 127);
+            transition: 0.25s;
+        }
+
+        header {
+            background-color: rgb(13, 7, 15);
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            padding: 1em 0;
+        }
+
+        .sec0 {
+            display: flexbox;
+            color: antiquewhite;
+            text-transform: uppercase;
+            height: 7em;
+            background-color: rgb(27, 7, 67);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .sec1, .sec5 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sec2, .sec3, .sec4, .sec6, .sec7 {
+            min-width: 20em;
+            max-width: 25em;
+            color: antiquewhite;
+            flex: 1;
+            margin: 1em;
+            text-align: center;
+            background-color: rgb(27, 7, 67);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        ul, ol {
+            padding-left: 1em;
+        }
+
+        li {
+            text-align: left;
+            padding-bottom: 1em;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            aside {
+                width: 100%;
+                margin-top: 2em;
+            }
+
+            main {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <style>
-        body{border: none;}
-        nav{background-color: black; min-height: 3em;}
-        a{text-decoration: none;}
-        li{list-style-type: none; display: inline-block;}
 
-
-    </style>
-    <nav>
-        <ul class="menu">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Listas</a></li>
-          <li><a href="#">Formulario</a></li>
+    <!-- Menu principal no topo -->
+    <nav class="menu1">
+        <ul>
+          <li class="menu1-li"><a href="#"><button>Inicio</button></a></li>
+          <li class="menu1-li"><a href="#"><button>Listas</button></a></li>
+          <li class="menu1-li"><a href="#"><button>Formulario</button></a></li>
         </ul>
-      </nav>
-    <header></header>
-    <main></main>
+    </nav>
+
+    <!-- Cabeçalho -->
+    <header>
+        <a href="mailto:afonso.farias@ceuma.br">
+            <img src="./assets/afonso outlook.jpg" alt="Banner">
+        </a>
+    </header>
+
+    <!-- Container principal com main e aside -->
+    <div class="container">
+        <main>
+            <!-- Conteúdo principal -->
+            <section class="sec0">
+                <h1>Desafio 2 - HTML</h1>
+                <p>Abaixo explicarei sobre algumas TAGS</p>
+            </section>
+            <section class="sec1">
+                <section class="sec2">
+                    <h2>TAGS de estrutura</h2>
+                    <p>Exemplos: &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, &lt;main&gt;, &lt;footer&gt;, &lt;aside&gt;</p>
+                    <span>
+                        Detalhamento:
+                        <ul class="sec-ul1">
+                            <li class="sec-li1"><strong>&lt;header&gt;: </strong>É o cabeçalho da página. Está contido no body.</li>
+                            <li class="sec-li1"><strong>&lt;nav&gt;: </strong>Usado na construção da barra de navegação.</li>
+                            <li class="sec-li1"><strong>&lt;article&gt;: </strong>Refere-se a notícias ou assuntos independentes.</li>
+                            <li class="sec-li1"><strong>&lt;section&gt;: </strong>Similar à div, separa o conteúdo em seções, mas sem o efeito container.</li>
+                            <li class="sec-li1"><strong>&lt;main&gt;: </strong>Mostra o conteúdo principal do site.</li>
+                            <li class="sec-li1"><strong>&lt;footer&gt;: </strong>Compõe o rodapé do site.</li>
+                            <li class="sec-li1"><strong>&lt;aside&gt;: </strong>Usado para disponibilizar conteúdo ao lado do main.</li>
+                        </ul>
+                    </span>
+                </section>
+                <section class="sec3">
+                    <h2>TAGS Auxiliares</h2>
+                    <p>Exemplos: &lt;div&gt;, &lt;span&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;ul&gt;, &lt;li&gt;</p>
+                    <span>
+                        Detalhamento:
+                        <ul class="sec-ul2">
+                            <li class="sec-li2"><strong>&lt;div&gt;: </strong>Cria container onde podem ser colocadas diversas tags.</li>
+                            <li class="sec-li2"><strong>&lt;span&gt;: </strong>Um elemento inline, flui dentro do texto existente sem criar uma quebra de linha.</li>
+                            <li class="sec-li2"><strong>&lt;p&gt;: </strong>Texto em parágrafo gerando quebra de linha.</li>
+                            <li class="sec-li2"><strong>&lt;h1&gt;: </strong>Gera formatação de texto estilo título.</li>
+                            <li class="sec-li2"><strong>&lt;ul&gt;: </strong>Cria uma lista não ordenada.</li>
+                            <li class="sec-li2"><strong>&lt;li&gt;: </strong>Criar itens da lista.</li>
+                        </ul>
+                    </span>
+                </section>
+                <section class="sec4">
+                    <h2>TAGS de Texto</h2>
+                    <p>Exemplos: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;, &lt;br&gt;, &lt;blockquote&gt;</p>
+                    <span>
+                        <ul class="sec-ul3">
+                            <li class="sec-li3"><strong>&lt;strong&gt;: </strong>Negrito.</li>
+                            <li class="sec-li3"><strong>&lt;em&gt;: </strong>Itálico.</li>
+                            <li class="sec-li3"><strong>&lt;a&gt;: </strong>Link de navegação.</li>
+                            <li class="sec-li3"><strong>&lt;br&gt;: </strong>Quebra de linha.</li>
+                            <li class="sec-li3"><strong>&lt;blockquote&gt;: </strong>Citação em bloco.</li>
+                        </ul>
+                    </span>
+                </section>
+            </section>
+
+            <section class="sec5">
+                <section class="sec6">
+                    <h2>TAGS de estrutura</h2>
+                    <p>Exemplos: &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, &lt;main&gt;, &lt;footer&gt;, &lt;aside&gt;</p>
+                    <span>
+                        Detalhamento:
+                        <ol class="sec-ol1">
+                            <li class="sec-li4"><strong>&lt;header&gt;: </strong>É o cabeçalho da página. Está contido no body.</li>
+                            <li class="sec-li4"><strong>&lt;nav&gt;: </strong>Usado na construção da barra de navegação.</li>
+                            <li class="sec-li4"><strong>&lt;article&gt;: </strong>Refere-se a notícias ou assuntos independentes.</li>
+                            <li class="sec-li4"><strong>&lt;section&gt;: </strong>Similar à div, separa o conteúdo em seções, mas sem o efeito container.</li>
+                            <li class="sec-li4"><strong>&lt;main&gt;: </strong>Mostra o conteúdo principal do site.</li>
+                            <li class="sec-li4"><strong>&lt;footer&gt;: </strong>Compõe o rodapé do site.</li>
+                            <li class="sec-li4"><strong>&lt;aside&gt;: </strong>Usado para disponibilizar conteúdo ao lado do main.</li>
+                        </ol>
+                    </span>
+                </section>
+                <section class="sec7">
+                    <h2>TAGS Auxiliares</h2>
+                    <p>Exemplos: &lt;div&gt;, &lt;span&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;ul&gt;, &lt;li&gt;</p>
+                    <span>
+                        Detalhamento:
+                        <ol class="sec-ol2">
+                            <li class="sec-li5"><strong>&lt;div&gt;: </strong>Cria container onde podem ser colocadas diversas tags.</li>
+                            <li class="sec-li5"><strong>&lt;span&gt;: </strong>Um elemento inline, flui dentro do texto existente sem criar uma quebra de linha.</li>
+                            <li class="sec-li5"><strong>&lt;p&gt;: </strong>Texto em parágrafo gerando quebra de linha.</li>
+                            <li class="sec-li5"><strong>&lt;h1&gt;: </strong>Gera formatação de texto estilo título.</li>
+                            <li class="sec-li5"><strong>&lt;ul&gt;: </strong>Cria uma lista não ordenada.</li>
+                            <li class="sec-li5"><strong>&lt;li&gt;: </strong>Criar itens da lista.</li>
+                        </ol>
+                    </span>
+                </section>
+            </section>
+        </main>
+
+        <!-- Menu lateral (aside) -->
+        <aside>
+            <nav>
+                <ul class="menu2">
+                    <li class="menu2-li"><a href="#"><button>Inicio</button></a></li>
+                    <li class="menu2-li"><a href="#"><button>Listas</button></a></li>
+                    <li class="menu2-li"><a href="#"><button>Formulario</button></a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- Rodapé -->
     <footer></footer>
+    
 </body>
 </html>
