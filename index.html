@@ -29,8 +29,9 @@
         aside {
             background-color: rgb(27, 7, 67);
             padding: 1em;
-            width: 20%; /* Aside ocupa 20% da largura */
+            width: 10%; /* Aside ocupa 20% da largura */
             color: whitesmoke;
+            height: auto;
         }
 
         /* Menu principal */
@@ -142,6 +143,31 @@
                 width: 100%;
             }
         }
+        footer{
+            background-color: rgb(29, 27, 27);
+            color: whitesmoke;
+            list-style:none;
+            height: 5em;
+            align-items: center;
+        }
+       
+        .fp {
+            display: flex;
+            align-items: center;
+            flex-flow: row wrap;
+            text-align: center;
+        }
+        .fe {
+            width: 50%;
+            display: inline-block;
+        }
+
+        .fd {
+            width: 50%;
+        }
+        .logo-social{
+            width: 3em
+        }
     </style>
 </head>
 <body>
@@ -250,6 +276,18 @@
                     </span>
                 </section>
             </section>
+            <div class="formulario">
+                <form>
+                    <fieldset>
+                        <legend>Preencha seus dados aqui</legend>
+                        <label><input id="nome" type="text" placeholder="Nome"></label>
+                        <label><input id="Telefone" type="text" placeholder="(xx) 9999-9999"></label>
+                        <label><input id="desc" type="text-area" placeholder="Descrição"></label>
+                        
+
+                    </fieldset>
+                </form>
+            </div>
         </main>
 
         <!-- Menu lateral (aside) -->
@@ -265,7 +303,17 @@
     </div>
 
     <!-- Rodapé -->
-    <footer></footer>
+    <footer>
+        <div class="fp">
+            <div class="fe">
+                <a href="htts://github.com/afonsofarias" target="_blank"><img class="logo-social" src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_1280.png" alt="logo github"></a>
+                <a href="htts://linkedin.com/afonso.j.m.farias" target="_blank"><img class="logo-social" src="https://static.vecteezy.com/system/resources/previews/016/716/470/non_2x/linkedin-icon-free-png.png" alt="logo linkedin"></a>
+            </div>
+            <div class="fd">
+                <span>Copyright® Afonso Farias</span>
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>
