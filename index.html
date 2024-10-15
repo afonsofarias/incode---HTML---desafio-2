@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 2 - HTML</title>
     <style>
-        /* Reset básico */
         body { 
           background-color: lightgray;
             border: none; 
@@ -13,7 +12,6 @@
             font-family: Arial, sans-serif;
         }
         
-        /* Estrutura Flex para o layout geral */
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -22,19 +20,18 @@
 
         main {
             background-color: lightgray;
-            flex: 1; /* O main irá ocupar todo o espaço disponível */
+            flex: 1; 
             padding: 0em 1em;
         }
 
         aside {
             background-color: rgb(27, 7, 67);
             padding: 1em;
-            width: 10%; /* Aside ocupa 20% da largura */
+            width: 10%; 
             color: whitesmoke;
             height: auto;
         }
 
-        /* Menu principal */
         .menu1 {
             display: grid; 
             min-height: 3em; 
@@ -48,7 +45,6 @@
             padding-right: 10%;
         }
 
-        /* Menu lateral */
         .menu2 {
             display: flex;
             flex-direction: column;
@@ -132,7 +128,6 @@
             padding-bottom: 1em;
         }
 
-        /* Responsividade para telas menores */
         @media (max-width: 768px) {
             aside {
                 width: 100%;
@@ -168,11 +163,33 @@
         .logo-social{
             width: 3em
         }
+        .form_tit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+            margin-bottom: -5em;
+        }
+        .form_sec {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh;  
+        }
+        .formulario {
+            display: block;
+            flex-direction: column;
+            color: antiquewhite;
+            width: 25vw;
+            background-color: rgb(27, 7, 67);
+            padding: 2em;
+            text-align: center;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Menu principal no topo -->
     <nav class="menu1">
         <ul>
           <li class="menu1-li"><a href="#"><button>Inicio</button></a></li>
@@ -181,17 +198,14 @@
         </ul>
     </nav>
 
-    <!-- Cabeçalho -->
     <header>
         <a href="mailto:afonso.farias@ceuma.br">
             <img src="./assets/afonso outlook.jpg" alt="Banner">
         </a>
     </header>
 
-    <!-- Container principal com main e aside -->
     <div class="container">
         <main>
-            <!-- Conteúdo principal -->
             <section class="sec0">
                 <h1>Desafio 2 - HTML</h1>
                 <p>Abaixo explicarei sobre algumas TAGS</p>
@@ -276,21 +290,62 @@
                     </span>
                 </section>
             </section>
-            <div class="formulario">
-                <form>
-                    <fieldset>
-                        <legend>Preencha seus dados aqui</legend>
-                        <label><input id="nome" type="text" placeholder="Nome"></label>
-                        <label><input id="Telefone" type="text" placeholder="(xx) 9999-9999"></label>
-                        <label><input id="desc" type="text-area" placeholder="Descrição"></label>
+            
+            <section>
+                <section class="form_tit">
+                    <h1>Formulário de Exemplo</h1>
+                </section>
+                <section class="form_sec">
+                    <form class="formulario">
                         
-
-                    </fieldset>
-                </form>
-            </div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Insira seu nome completo"><br><br>
+            
+                        
+                        <p>Gênero:</p>
+                        <input type="radio" id="masculino" name="genero" value="masculino">
+                        <label for="masculino">Masculino</label><br>
+                        <input type="radio" id="feminino" name="genero" value="feminino">
+                        <label for="feminino">Feminino</label><br><br>
+            
+                        
+                        <p>Interesses:</p>
+                        <input type="checkbox" id="esportes" name="interesses" value="esportes">
+                        <label for="esportes">Esportes</label><br>
+                        <input type="checkbox" id="musica" name="interesses" value="musica">
+                        <label for="musica">Música</label><br><br>
+            
+                        
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha"><br><br>
+            
+                        
+                        <label for="pais">Selecione seu país:</label>
+                        <select id="pais" name="pais">
+                            <option value="brasil">Brasil</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="eua">Estados Unidos</option>
+                        </select><br><br>
+            
+                        
+                        <fieldset>
+                            <legend>Informações Adicionais</legend>
+            
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="nome@email.com"><br><br>
+            
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx"><br><br>
+                        </fieldset>
+            
+                        
+                        <br><input type="submit" value="Enviar">
+                    </form>
+                </section>
+            </section>
         </main>
 
-        <!-- Menu lateral (aside) -->
+        
         <aside>
             <nav>
                 <ul class="menu2">
@@ -302,7 +357,7 @@
         </aside>
     </div>
 
-    <!-- Rodapé -->
+    
     <footer>
         <div class="fp">
             <div class="fe">
